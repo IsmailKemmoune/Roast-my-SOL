@@ -55,7 +55,7 @@ export async function POST(req: Request) {
     )}. Now, roast them!`;
 
     const response = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-4o-mini",
       messages: [{ role: "system", content: prompt }],
       max_tokens: 100,
     });
