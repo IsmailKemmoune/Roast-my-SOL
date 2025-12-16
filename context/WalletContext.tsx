@@ -13,7 +13,8 @@ import {
 import "@solana/wallet-adapter-react-ui/styles.css";
 
 const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const network = process.env.NEXT_PUBLIC_ALCHEMY_RPC!;
+  const network = process.env.NEXT_PUBLIC_ALCHEMY_RPC ||
+    "https://api.mainnet-beta.solana.com";
 
   const wallets = useMemo(
     () => [new PhantomWalletAdapter(), new SolflareWalletAdapter()],
